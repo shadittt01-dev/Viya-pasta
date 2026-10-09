@@ -1,0 +1,25 @@
+{
+  "name": "via-pasta-yanbu",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ordering website and owner dashboard for Via Pasta, Yanbu.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server/main.js",
+    "dev": "APP_ENV=development node --disable-warning=ExperimentalWarning --watch server/main.js",
+    "migrate": "node --disable-warning=ExperimentalWarning scripts/migrate.js",
+    "seed:business": "node --disable-warning=ExperimentalWarning scripts/seed.js business",
+    "seed:dev": "node --disable-warning=ExperimentalWarning scripts/seed.js dev",
+    "create-owner": "node --disable-warning=ExperimentalWarning scripts/create-user.js",
+    "test": "node --disable-warning=ExperimentalWarning --test --test-concurrency=1 tests/unit/*.test.js tests/integration/*.test.js",
+    "test:browser": "python3 tests/browser/run_all.py",
+    "fetch-fonts": "sh scripts/fetch-fonts.sh",
+    "backup": "node --disable-warning=ExperimentalWarning scripts/backup.js",
+    "vercel-build": "echo No build step needed",
+    "test:remote": "node --disable-warning=ExperimentalWarning tests/run-remote.js"
+  },
+  "license": "UNLICENSED"
+}
